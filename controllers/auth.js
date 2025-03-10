@@ -166,7 +166,7 @@ exports.postRest = (req, res, next) => {
                     subject: 'Password Reset', // Subject line
                     html:`
                     <p>You Requested a password Reset</p>
-                    <p>Click this <a href="${baseUrl}/new-password/${token}" > Link</a> to set new Password</p>
+                    <p>Click this <a href="https://e-com-xzk9.onrender.com/new-password/${token}" > Link</a> to set new Password</p>
                     `
                 };
 
