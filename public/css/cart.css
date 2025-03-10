@@ -1,0 +1,120 @@
+/* Updated CSS */
+.cart__item-list {
+  list-style: none;
+  margin: 2rem auto;
+  padding: 0;
+  width: 80%;
+  max-width: 1200px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.cart__item {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem;
+  border-bottom: 1px solid #eee;
+  transition: transform 0.2s ease;
+}
+
+.cart__item:hover {
+  transform: translateX(5px);
+}
+
+.cart__item-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart__item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cart__item-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2d3436;
+  margin: 0;
+}
+
+.cart__item-meta {
+  display: flex;
+  gap: 1.5rem;
+  color: #636e72;
+  font-size: 0.95rem;
+}
+
+.cart__item-price {
+  color: #0984e3;
+  font-weight: 700;
+}
+
+.cart__item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cart__item-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.delete-btn {
+  background: #ff7675;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: #d63031;
+  transform: translateY(-1px);
+}
+
+.order-summary {
+  padding: 2rem;
+  text-align: right;
+  background: #f8f9fa;
+  border-radius: 0 0 15px 15px;
+}
+
+.total-amount {
+  font-size: 1.5rem;
+  color: #2d3436;
+  margin-bottom: 1.5rem;
+}
+
+.total-amount span {
+  color: #0984e3;
+  font-weight: 700;
+}
+
+.place-order-btn {
+  background: linear-gradient(135deg, #0984e3, #6c5ce7);
+  color: white;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+}
+
+.place-order-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+}

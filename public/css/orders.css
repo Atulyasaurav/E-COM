@@ -1,0 +1,293 @@
+/* orders.css */
+.orders {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  width: 90%;
+  margin: 3rem auto;
+}
+
+.orders__item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.orders__item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.orders__item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.1),
+    transparent
+  );
+  transition: all 0.6s ease;
+}
+
+.orders__item:hover::before {
+  left: 100%;
+}
+
+.order-glow {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 50% 50%, 
+    rgba(102, 126, 234, 0.4) 0%, 
+    transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.orders__item:hover .order-glow {
+  opacity: 1;
+}
+
+.order-id {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.orders__products {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.orders__products-item {
+  padding: 1rem;
+  margin: 0.5rem 0;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.orders__products-item:hover {
+  transform: translateX(10px);
+}
+
+.product-emoji {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.product-name {
+  flex-grow: 1;
+  color: rgba(255,255,255,0.9);
+}
+
+.product-quantity {
+  background: #4ecdc4;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.order-total {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  background: #ff6b6b;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 3;
+}
+
+.orders__item:hover .order-total {
+  bottom: 0;
+}
+
+.progress-tracker {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.6);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 4;
+}
+
+.orders__item:hover .progress-tracker {
+  top: 0;
+}
+
+.progress-bar {
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 2px;
+  position: relative;
+  margin: 1.5rem 0;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 65%;
+  background: linear-gradient(90deg, #4ecdc4, #45b7af);
+  border-radius: 2px;
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: -3px;
+  width: 10px;
+  height: 10px;
+  background: #4ecdc4;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(78, 205, 196, 0.5);
+}
+
+.progress-text {
+  color: rgba(255,255,255,0.9);
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: transparent;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  -webkit-background-clip: text;
+  margin: 5rem 0;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .orders {
+    grid-template-columns: 1fr;
+  }
+  
+  .orders__item {
+    min-height: 300px;
+    padding: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin: 3rem 0;
+  }
+}
+
+/* orders.css */
+.orders {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  width: 90%;
+  margin: 3rem auto;
+}
+
+.orders__item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Product Image Styling */
+.product-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+}
+
+.orders__products-item:hover .product-image {
+  transform: scale(1.1);
+  border-color: rgba(78, 205, 196, 0.5);
+}
+
+/* Enhanced Total Price Visibility */
+.order-total {
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 -5px 20px rgba(255,107,107,0.2);
+}
+
+.order-total::before {
+  content: '💰';
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.orders__item:hover .order-total {
+  bottom: 0;
+}
+
+/* Rest of the CSS remains the same from previous version */

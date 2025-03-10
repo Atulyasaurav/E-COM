@@ -1,0 +1,49 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/orders.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <main>
+        <% if (orders.length <= 0) { %>
+            <h1>No Active Orders</h1>
+        <% } else { %>
+            <ul class="orders">
+                <% orders.forEach(order => { %>
+                    <li class="orders__item">
+                        <div class="order-glow"></div>
+                        
+                        <div class="progress-tracker">
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                            <div class="progress-text">
+                                <span>Order Processing</span>
+                                <span>65% Complete</span>
+                            </div>
+                        </div>
+
+                        <h2 class="order-id">ORDER #<%= order._id.toString().slice(-8).toUpperCase() %></h2>
+                        
+                        <ul class="orders__products">
+                            <% order.products.forEach(p => { %>
+                                <li class="orders__products-item">
+                                    <img src="<%= p.product.imageUrl %>" 
+                                         class="product-image" 
+                                         alt="<%= p.product.title %>">
+                                    <span class="product-name"><%= p.product.title %></span>
+                                    <span class="product-quantity"><%= p.quantity %>x</span>
+                                </li>
+                            <% }); %>
+                        </ul>
+
+                        <div class="order-total">
+                            TOTAL: $<%= order.totalAmount %>
+                        </div>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } %>
+    </main>
+    <%- include('../includes/end.ejs') %>
